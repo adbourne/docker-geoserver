@@ -7,6 +7,9 @@ ENV GEOSERVER_VERSION="2.10.5" \
     # Set data dir so it can be picked up by tomcat (seperate ENV as to use the previously set GEOSERVER_DATA_DIR)
 ENV CATALINA_OPTS="${CATALINA_OPTS} -DGEOSERVER_DATA_DIR=${GEOSERVER_DATA_DIR}"
 
+# Put the custom web.xml in place
+COPY resources/web.xml "${CATALINA_HOME}/conf/web.xml"
+
 # Download and install geoserver
 RUN apk update \
     # Add certs to allow wget to download over TLS
