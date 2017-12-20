@@ -1,7 +1,7 @@
 FROM tomcat:8.5-jre8-alpine
 MAINTAINER Aaron Bourne <contact@aaronbourne.co.uk>
 
-ENV GEOSERVER_VERSION="2.10.5" \
+ENV GEOSERVER_VERSION="2.12.0" \
     GEOSERVER_DATA_DIR="/geoserver_data"
 
     # Set data dir so it can be picked up by tomcat (seperate ENV as to use the previously set GEOSERVER_DATA_DIR)
