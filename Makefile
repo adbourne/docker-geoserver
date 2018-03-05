@@ -10,7 +10,4 @@ $1:
 endef
 $(foreach version,$(VERSIONS),$(eval $(call geoserver-version,$(version))))
 
-update:
-	docker run --rm -v $$(pwd):/work -w /work buildpack-deps ./update.sh
-
-.PHONY: all build update $(VERSIONS)
+.PHONY: all build $(VERSIONS)
