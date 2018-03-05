@@ -12,6 +12,7 @@ env:
 before_script:
   - env | sort
   - cd "$VERSION"
+  - image="adbourne/geoserver:v$VERSION"
 
 script:
   - docker build --pull -t "$image" .
