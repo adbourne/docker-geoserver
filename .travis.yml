@@ -1,0 +1,17 @@
+---
+language: bash
+services: docker
+
+dist: trusty
+
+env:
+  - VERSION=2.10.5
+  - VERSION=2.11.4
+  - VERSION=2.12.2
+
+before_script:
+  - env | sort
+  - cd "$VERSION"
+
+script:
+  - docker build --pull -t "$image" .
